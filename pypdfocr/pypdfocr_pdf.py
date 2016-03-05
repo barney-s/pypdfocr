@@ -187,7 +187,7 @@ class PyPdf(object):
         """
             Take two page objects, rotate the text page if necessary, and return the merged page
         """
-        orig_rotation_angle = int(original_page.get('/Rotate', 0))
+        orig_rotation_angle = int(original_page.get('/Rotate').getObject())
 
         if orig_rotation_angle != 0:
             logging.info("Original Rotation: %s" % orig_rotation_angle)
